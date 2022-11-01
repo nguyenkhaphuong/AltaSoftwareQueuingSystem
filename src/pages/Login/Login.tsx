@@ -37,10 +37,9 @@ export default function Login() {
                 <Form.Item name="Password" rules={[{ required: true }]}>
                   <label htmlFor="password">
                     Mật khẩu *
-                    <Input
+                    <Input.Password
                       size="large"
                       style={{ borderRadius: "8px" }}
-                      type="password"
                     />
                   </label>
                 </Form.Item>
