@@ -31,7 +31,6 @@ export default function Login() {
                       style={{
                         borderRadius: "8px",
                       }}
-                      placeholder="Username"
                     />
                   </label>
                 </Form.Item>
@@ -42,7 +41,6 @@ export default function Login() {
                       size="large"
                       style={{ borderRadius: "8px" }}
                       type="password"
-                      placeholder="Password"
                     />
                   </label>
                 </Form.Item>
