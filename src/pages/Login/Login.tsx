@@ -11,16 +11,38 @@ export default function Login() {
   return (
     <div className="container" style={{ backgroundColor: "#F6F6F6" }}>
       <Row>
-        <Col span={10} style={{ padding: 20 }}>
+        <Col
+          span={10}
+          xs={24}
+          md={12}
+          xl={10}
+          style={{
+            padding: 20,
+          }}
+        >
           <div className="container" style={{ marginTop: 35 }}>
             <div className="img-container">
-              <img src={logo} alt="Alta Media" width="25%" />
+              <img
+                style={{
+                  display: "block",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
+                src={logo}
+                alt="Alta Media"
+                width="25%"
+              />
             </div>
             <div className="container" style={{ marginTop: 50 }}>
               <Form
                 name="normal_login"
                 className="login-form"
                 initialValues={{ remember: true }}
+                style={{
+                  display: "block",
+                  marginLeft: "auto",
+                  marginRight: "auto",
+                }}
               >
                 <Form.Item name="Username" rules={[{ required: true }]}>
                   <label htmlFor="username">
@@ -68,14 +90,22 @@ export default function Login() {
             </div>
           </div>
         </Col>
-        <Col span={14} style={{ backgroundColor: "#fff", padding: 20 }}>
+        <Col
+          span={14}
+          xs={24}
+          md={12}
+          xl={14}
+          style={{ backgroundColor: "#fff", padding: 20 }}
+        >
           <div className="container">
-            <img src={login} alt="Alta Software" width="65%" />
+            <img
+              style={{ display: "inline-block" }}
+              src={login}
+              alt="Alta Software"
+              width="65%"
+            />
           </div>
-          <div
-            className="container-inline"
-            style={{ justifyItems: "flex-end", color: "#FF9138", padding: 20 }}
-          >
+          <div className="container" style={{ color: "#FF7506", padding: 20 }}>
             <p
               style={{ fontWeight: 400, fontSize: 34, marginBottom: "0.01rem" }}
             >
