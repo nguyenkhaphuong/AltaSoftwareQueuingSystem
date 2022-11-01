@@ -65,11 +65,9 @@ export default function Login() {
                     />
                   </label>
                 </Form.Item>
-                <Form.Item>
-                  <a href="#" style={{ color: "#E73F3F" }}>
-                    Quên mật khẩu?
-                  </a>
-                </Form.Item>
+                <a href="#" style={{ color: "#E73F3F" }}>
+                  Quên mật khẩu?
+                </a>
                 <Form.Item>
                   <Button
                     style={{
@@ -78,6 +76,7 @@ export default function Login() {
                       borderRadius: "8px",
                       backgroundColor: "#FF9138",
                       color: "#fff",
+                      justifySelf: "center",
                       fontWeight: 700,
                     }}
                     htmlType="submit"
@@ -95,17 +94,24 @@ export default function Login() {
           xs={24}
           md={12}
           xl={14}
-          style={{ backgroundColor: "#fff", padding: 20 }}
+          style={{
+            backgroundColor: "#fff",
+            padding: 20,
+            display: "flex",
+          }}
         >
           <div className="container">
             <img
-              style={{ display: "inline-block" }}
+              style={{ display: "block" }}
               src={login}
               alt="Alta Software"
-              width="65%"
+              width="130%"
             />
           </div>
-          <div className="container" style={{ color: "#FF7506", padding: 20 }}>
+          <div
+            className="container"
+            style={{ color: "#FF7506", display: "inline-block" }}
+          >
             <p
               style={{ fontWeight: 400, fontSize: 34, marginBottom: "0.01rem" }}
             >
