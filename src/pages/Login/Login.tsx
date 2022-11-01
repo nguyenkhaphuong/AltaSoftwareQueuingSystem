@@ -26,6 +26,8 @@ export default function Login() {
                   <label htmlFor="username">
                     Tên Đăng Nhập *
                     <Input
+                      size="large"
+                      type="text"
                       style={{
                         borderRadius: "8px",
                       }}
@@ -37,6 +39,7 @@ export default function Login() {
                   <label htmlFor="password">
                     Mật khẩu *
                     <Input
+                      size="large"
                       style={{ borderRadius: "8px" }}
                       type="password"
                       placeholder="Password"
