@@ -1,13 +1,15 @@
 import React from "react";
-import "./Login.css";
+import "./ForgotPassword.css";
 // import Ant Design components
 import { Col, Row } from "antd";
 import { Button, Form, Input } from "antd";
 // import images assets
 import logo from "../../assets/logo.png";
-import login from "../../assets/group341.png";
+import forgotPassword from "../../assets/forgotpassword.png";
+import { useNavigate } from "react-router-dom";
 
-export default function Login() {
+export default function ForgotPassword() {
+  const navigate = useNavigate();
   return (
     <div className="container" style={{ backgroundColor: "#F6F6F6" }}>
       <Row>
@@ -46,7 +48,7 @@ export default function Login() {
               >
                 <Form.Item name="Username" rules={[{ required: true }]}>
                   <label htmlFor="username">
-                    Tên Đăng Nhập *
+                    Vui lòng nhập email để đặt lại mật khẩu của bạn *
                     <Input
                       size="large"
                       type="text"
@@ -56,18 +58,25 @@ export default function Login() {
                     />
                   </label>
                 </Form.Item>
-                <Form.Item name="Password" rules={[{ required: true }]}>
-                  <label htmlFor="password">
-                    Mật khẩu *
-                    <Input.Password
-                      size="large"
-                      style={{ borderRadius: "8px" }}
-                    />
-                  </label>
+                <Form.Item>
+                  <Button
+                    type="default"
+                    style={{
+                      width: "162px",
+                      height: "40px",
+                      borderRadius: "8px",
+                      borderColor: "#FF9138",
+                      color: "#FF9138",
+                      justifySelf: "center",
+                      fontWeight: 700,
+                    }}
+                    onClick={() => navigate("/")}
+                    htmlType="submit"
+                    className="login-form-button"
+                  >
+                    Huỷ
+                  </Button>
                 </Form.Item>
-                <a href="/forgotpassword" style={{ color: "#E73F3F" }}>
-                  Quên mật khẩu?
-                </a>
                 <Form.Item>
                   <Button
                     style={{
@@ -82,7 +91,7 @@ export default function Login() {
                     htmlType="submit"
                     className="login-form-button"
                   >
-                    Đăng Nhập
+                    Tiếp tục
                   </Button>
                 </Form.Item>
               </Form>
@@ -103,25 +112,11 @@ export default function Login() {
           <div className="container">
             <img
               style={{ display: "block" }}
-              src={login}
+              src={forgotPassword}
               alt="Alta Software"
-              width="130%"
+              width="711px"
+              height="560px"
             />
-          </div>
-          <div
-            className="container"
-            style={{ color: "#FF7506", display: "inline-block" }}
-          >
-            <p
-              style={{ fontWeight: 400, fontSize: 34, marginBottom: "0.01rem" }}
-            >
-              Hệ thống
-            </p>
-            <p
-              style={{ fontWeight: 900, fontSize: 36, marginBottom: "0.01rem" }}
-            >
-              QUẢN LÝ XẾP HÀNG
-            </p>
           </div>
         </Col>
       </Row>
