@@ -1,5 +1,4 @@
 import React from "react";
-import "./ForgotPassword.css";
 // import Ant Design components
 import { Col, Row } from "antd";
 import { Button, Form, Input } from "antd";
@@ -8,7 +7,7 @@ import logo from "../../assets/logo.png";
 import forgotPassword from "../../assets/forgotpassword.png";
 import { useNavigate } from "react-router-dom";
 
-export default function ForgotPassword() {
+export default function ResetPassword() {
   const navigate = useNavigate();
   return (
     <div className="container" style={{ backgroundColor: "#F6F6F6" }}>
@@ -55,36 +54,29 @@ export default function ForgotPassword() {
                 >
                   Đặt lại mật khẩu
                 </p>
-                <Form.Item name="Email" rules={[{ required: true }]}>
-                  <label htmlFor="email">
-                    Vui lòng nhập email để đặt lại mật khẩu của bạn *
-                    <Input
+                <Form.Item name="Password" rules={[{ required: true }]}>
+                  <label htmlFor="password">
+                    Mật khẩu *
+                    <Input.Password
                       size="large"
-                      type="text"
+                      type="password"
                       style={{
                         borderRadius: "8px",
                       }}
                     />
                   </label>
                 </Form.Item>
-                <Form.Item>
-                  <Button
-                    type="default"
-                    style={{
-                      width: "162px",
-                      height: "40px",
-                      borderRadius: "8px",
-                      borderColor: "#FF9138",
-                      color: "#FF9138",
-                      justifySelf: "center",
-                      fontWeight: 700,
-                    }}
-                    onClick={() => navigate("/")}
-                    htmlType="submit"
-                    className="login-form-button"
-                  >
-                    Huỷ
-                  </Button>
+                <Form.Item name="Password" rules={[{ required: true }]}>
+                  <label htmlFor="confirm">
+                    Nhập lại mật khẩu *
+                    <Input.Password
+                      size="large"
+                      type="password"
+                      style={{
+                        borderRadius: "8px",
+                      }}
+                    />
+                  </label>
                 </Form.Item>
                 <Form.Item>
                   <Button
@@ -97,11 +89,10 @@ export default function ForgotPassword() {
                       justifySelf: "center",
                       fontWeight: 700,
                     }}
-                    onClick={() => navigate("/resetpassword")}
                     htmlType="submit"
                     className="login-form-button"
                   >
-                    Tiếp tục
+                    Xác nhận
                   </Button>
                 </Form.Item>
               </Form>

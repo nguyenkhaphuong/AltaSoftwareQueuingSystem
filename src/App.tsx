@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import ForgotPassword from "./pages/forgotPassword/ForgotPassword";
 import Login from "./pages/Login/Login";
 import Profile from "./pages/Profile/Profile";
+import ResetPassword from "./pages/resetPassword/ResetPassword";
 
 function App() {
   return (
@@ -10,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
-        <Route></Route>
+        <Route path="/resetpassword" element={<ResetPassword />}></Route>
       </Routes>
     </div>
   );

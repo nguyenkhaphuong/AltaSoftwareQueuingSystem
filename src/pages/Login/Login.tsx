@@ -68,7 +68,10 @@ export default function Login() {
                 <a href="/forgotpassword" style={{ color: "#E73F3F" }}>
                   Quên mật khẩu?
                 </a>
-                <Form.Item>
+                <Form.Item
+                  style={{ marginTop: "1.2rem" }}
+                  wrapperCol={{ span: 14, offset: 7 }}
+                >
                   <Button
                     style={{
                       width: "162px",
