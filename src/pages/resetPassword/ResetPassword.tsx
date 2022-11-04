@@ -78,7 +78,10 @@ export default function ResetPassword() {
                     />
                   </label>
                 </Form.Item>
-                <Form.Item>
+                <Form.Item
+                  style={{ marginTop: "1.2rem" }}
+                  wrapperCol={{ span: 14, offset: 7 }}
+                >
                   <Button
                     style={{
                       width: "162px",
