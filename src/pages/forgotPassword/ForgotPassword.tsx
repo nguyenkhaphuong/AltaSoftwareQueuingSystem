@@ -32,7 +32,7 @@ export default function ForgotPassword() {
                 }}
                 src={logo}
                 alt="Alta Media"
-                width="25%"
+                width="170px"
               />
             </div>
             <div className="container" style={{ marginTop: 50 }}>
@@ -81,6 +81,7 @@ export default function ForgotPassword() {
                       color: "#FF9138",
                       justifySelf: "center",
                       fontWeight: 700,
+                      marginLeft: 8,
                       marginRight: 24,
                     }}
                     onClick={() => navigate("/")}

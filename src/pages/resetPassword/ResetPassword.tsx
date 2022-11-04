@@ -29,7 +29,7 @@ export default function ResetPassword() {
                 }}
                 src={logo}
                 alt="Alta Media"
-                width="25%"
+                width="170px"
               />
             </div>
             <div className="container" style={{ marginTop: 50 }}>

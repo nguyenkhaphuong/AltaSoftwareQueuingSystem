@@ -7,7 +7,7 @@ import ResetPassword from "./pages/resetPassword/ResetPassword";
 
 function App() {
   return (
-    <div style={{ backgroundColor: "#F6F6F6" }}>
+    <div style={{ backgroundColor: "#F7F7F7" }}>
       <Routes>
         <Route path="/" element={<Login />}></Route>
         <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
