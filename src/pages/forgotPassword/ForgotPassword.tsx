@@ -11,7 +11,7 @@ import { useNavigate } from "react-router-dom";
 export default function ForgotPassword() {
   const navigate = useNavigate();
   return (
-    <div className="container" style={{ backgroundColor: "#F6F6F6" }}>
+    <div>
       <Row>
         <Col
           span={10}
@@ -56,7 +56,7 @@ export default function ForgotPassword() {
                   Đặt lại mật khẩu
                 </p>
                 <Form.Item name="Email" rules={[{ required: true }]}>
-                  <label htmlFor="email">
+                  <label htmlFor="email" style={{ fontSize: 18 }}>
                     Vui lòng nhập email để đặt lại mật khẩu của bạn *
                     <Input
                       size="large"
@@ -67,7 +67,10 @@ export default function ForgotPassword() {
                     />
                   </label>
                 </Form.Item>
-                <Form.Item>
+                <Form.Item
+                  style={{ marginTop: "1.2rem" }}
+                  wrapperCol={{ span: 0, offset: 1 }}
+                >
                   <Button
                     type="default"
                     style={{
@@ -78,6 +81,7 @@ export default function ForgotPassword() {
                       color: "#FF9138",
                       justifySelf: "center",
                       fontWeight: 700,
+                      marginRight: 24,
                     }}
                     onClick={() => navigate("/")}
                     htmlType="submit"
@@ -85,8 +89,6 @@ export default function ForgotPassword() {
                   >
                     Huỷ
                   </Button>
-                </Form.Item>
-                <Form.Item>
                   <Button
                     style={{
                       width: "162px",

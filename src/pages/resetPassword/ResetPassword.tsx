@@ -5,12 +5,10 @@ import { Button, Form, Input } from "antd";
 // import images assets
 import logo from "../../assets/logo.png";
 import forgotPassword from "../../assets/forgotpassword.png";
-import { useNavigate } from "react-router-dom";
 
 export default function ResetPassword() {
-  const navigate = useNavigate();
   return (
-    <div className="container" style={{ backgroundColor: "#F6F6F6" }}>
+    <div>
       <Row>
         <Col
           span={10}

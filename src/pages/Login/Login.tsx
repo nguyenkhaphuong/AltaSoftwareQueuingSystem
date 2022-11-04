@@ -9,17 +9,9 @@ import login from "../../assets/group341.png";
 
 export default function Login() {
   return (
-    <div className="container" style={{ backgroundColor: "#F6F6F6" }}>
+    <div>
       <Row>
-        <Col
-          span={10}
-          xs={24}
-          md={12}
-          xl={10}
-          style={{
-            padding: 20,
-          }}
-        >
+        <Col xs={24} xl={10}>
           <div className="container" style={{ marginTop: 35 }}>
             <div className="img-container">
               <img
@@ -30,7 +22,7 @@ export default function Login() {
                 }}
                 src={logo}
                 alt="Alta Media"
-                width="25%"
+                width="170px"
               />
             </div>
             <div className="container" style={{ marginTop: 50 }}>
@@ -45,7 +37,7 @@ export default function Login() {
                 }}
               >
                 <Form.Item name="Username" rules={[{ required: true }]}>
-                  <label htmlFor="username">
+                  <label htmlFor="username" style={{ fontSize: 18 }}>
                     Tên Đăng Nhập *
                     <Input
                       size="large"
@@ -57,7 +49,7 @@ export default function Login() {
                   </label>
                 </Form.Item>
                 <Form.Item name="Password" rules={[{ required: true }]}>
-                  <label htmlFor="password">
+                  <label htmlFor="password" style={{ fontSize: 18 }}>
                     Mật khẩu *
                     <Input.Password
                       size="large"
@@ -65,7 +57,10 @@ export default function Login() {
                     />
                   </label>
                 </Form.Item>
-                <a href="/forgotpassword" style={{ color: "#E73F3F" }}>
+                <a
+                  href="/forgotpassword"
+                  style={{ fontSize: 14, color: "#E73F3F" }}
+                >
                   Quên mật khẩu?
                 </a>
                 <Form.Item
@@ -93,38 +88,21 @@ export default function Login() {
           </div>
         </Col>
         <Col
-          span={14}
           xs={24}
-          md={12}
           xl={14}
           style={{
             backgroundColor: "#fff",
             padding: 20,
-            display: "flex",
+            display: "inline-block",
           }}
         >
           <div className="container">
             <img
-              style={{ display: "block" }}
+              style={{ display: "inline" }}
               src={login}
               alt="Alta Software"
-              width="130%"
+              width="95%"
             />
-          </div>
-          <div
-            className="container"
-            style={{ color: "#FF7506", display: "inline-block" }}
-          >
-            <p
-              style={{ fontWeight: 400, fontSize: 34, marginBottom: "0.01rem" }}
-            >
-              Hệ thống
-            </p>
-            <p
-              style={{ fontWeight: 900, fontSize: 36, marginBottom: "0.01rem" }}
-            >
-              QUẢN LÝ XẾP HÀNG
-            </p>
           </div>
         </Col>
       </Row>
