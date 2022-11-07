@@ -1,5 +1,4 @@
 import React from "react";
-import "./ForgotPassword.css";
 // import Ant Design components
 import { Col, Row } from "antd";
 import { Button, Form, Input } from "antd";
@@ -14,9 +13,7 @@ export default function ForgotPassword() {
     <div>
       <Row>
         <Col
-          span={10}
           xs={24}
-          md={12}
           xl={10}
           style={{
             padding: 20,
@@ -37,7 +34,7 @@ export default function ForgotPassword() {
             </div>
             <div className="container" style={{ marginTop: 50 }}>
               <Form
-                name="normal_login"
+                name="forgot-password"
                 className="login-form"
                 initialValues={{ remember: true }}
                 style={{
@@ -100,7 +97,7 @@ export default function ForgotPassword() {
                       justifySelf: "center",
                       fontWeight: 700,
                     }}
-                    onClick={() => navigate("/resetpassword")}
+                    // onClick={() => navigate("/resetpassword")}
                     htmlType="submit"
                     className="login-form-button"
                   >
@@ -112,9 +109,7 @@ export default function ForgotPassword() {
           </div>
         </Col>
         <Col
-          span={14}
           xs={24}
-          md={12}
           xl={14}
           style={{
             backgroundColor: "#fff",
@@ -124,11 +119,10 @@ export default function ForgotPassword() {
         >
           <div className="container">
             <img
-              style={{ display: "block" }}
+              style={{ display: "block", marginTop: 145 }}
               src={forgotPassword}
               alt="Alta Software"
-              width="711px"
-              height="560px"
+              width="95%"
             />
           </div>
         </Col>

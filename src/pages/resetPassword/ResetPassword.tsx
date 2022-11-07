@@ -11,9 +11,7 @@ export default function ResetPassword() {
     <div>
       <Row>
         <Col
-          span={10}
           xs={24}
-          md={12}
           xl={10}
           style={{
             padding: 20,
@@ -101,9 +99,7 @@ export default function ResetPassword() {
           </div>
         </Col>
         <Col
-          span={14}
           xs={24}
-          md={12}
           xl={14}
           style={{
             backgroundColor: "#fff",
@@ -113,11 +109,10 @@ export default function ResetPassword() {
         >
           <div className="container">
             <img
-              style={{ display: "block" }}
+              style={{ display: "block", marginTop: 145 }}
               src={forgotPassword}
               alt="Alta Software"
-              width="711px"
-              height="560px"
+              width="95%"
             />
           </div>
         </Col>
