@@ -18,7 +18,7 @@ export default function Login() {
             padding: 20,
           }}
         >
-          <div className="container" style={{ marginTop: 35 }}>
+          <div className="container" style={{ marginTop: 82 }}>
             <div className="img-container">
               <img
                 style={{
@@ -31,7 +31,7 @@ export default function Login() {
                 width="170px"
               />
             </div>
-            <div className="container" style={{ marginTop: 50 }}>
+            <div className="container" style={{ marginTop: 75 }}>
               <Form
                 name="normal_login"
                 className="login-form"
@@ -99,12 +99,18 @@ export default function Login() {
           style={{
             backgroundColor: "#fff",
             padding: 20,
-            display: "inline-block",
+            display: "flex",
           }}
         >
           <div className="container">
             <img
-              style={{ display: "inline", marginLeft: 79, marginTop: 50 }}
+              style={{
+                display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
+                marginTop: 45,
+                maxWidth: 900,
+              }}
               src={login}
               alt="Alta Software"
               width="85%"

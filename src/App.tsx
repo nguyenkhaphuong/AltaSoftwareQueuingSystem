@@ -12,6 +12,7 @@ function App() {
         <Route path="/" element={<Login />}></Route>
         <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
         <Route path="/resetpassword" element={<ResetPassword />}></Route>
+        <Route path="/profile" element={<Profile />}></Route>
       </Routes>
     </div>
   );

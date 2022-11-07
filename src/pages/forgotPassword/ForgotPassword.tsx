@@ -19,7 +19,7 @@ export default function ForgotPassword() {
             padding: 20,
           }}
         >
-          <div className="container" style={{ marginTop: 35 }}>
+          <div className="container" style={{ marginTop: 82 }}>
             <div className="img-container">
               <img
                 style={{
@@ -32,13 +32,12 @@ export default function ForgotPassword() {
                 width="170px"
               />
             </div>
-            <div className="container" style={{ marginTop: 50 }}>
+            <div className="container" style={{ marginTop: 75 }}>
               <Form
                 name="forgot-password"
                 className="login-form"
                 initialValues={{ remember: true }}
                 style={{
-                  display: "block",
                   marginLeft: "auto",
                   marginRight: "auto",
                 }}
@@ -65,7 +64,7 @@ export default function ForgotPassword() {
                   </label>
                 </Form.Item>
                 <Form.Item
-                  style={{ marginTop: "1.2rem" }}
+                  style={{ marginTop: "48px" }}
                   wrapperCol={{ span: 0, offset: 1 }}
                 >
                   <Button
@@ -74,6 +73,7 @@ export default function ForgotPassword() {
                       width: "162px",
                       height: "40px",
                       borderRadius: "8px",
+                      backgroundColor: "#F7F7F7",
                       borderColor: "#FF9138",
                       color: "#FF9138",
                       justifySelf: "center",
@@ -119,7 +119,11 @@ export default function ForgotPassword() {
         >
           <div className="container">
             <img
-              style={{ display: "block", marginTop: 145 }}
+              style={{
+                display: "block",
+                marginTop: 100,
+                maxWidth: 900,
+              }}
               src={forgotPassword}
               alt="Alta Software"
               width="95%"

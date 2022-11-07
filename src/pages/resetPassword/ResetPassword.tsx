@@ -17,7 +17,7 @@ export default function ResetPassword() {
             padding: 20,
           }}
         >
-          <div className="container" style={{ marginTop: 35 }}>
+          <div className="container" style={{ marginTop: 82 }}>
             <div className="img-container">
               <img
                 style={{
@@ -30,7 +30,7 @@ export default function ResetPassword() {
                 width="170px"
               />
             </div>
-            <div className="container" style={{ marginTop: 50 }}>
+            <div className="container" style={{ marginTop: 75 }}>
               <Form
                 name="normal_login"
                 className="login-form"
@@ -75,7 +75,7 @@ export default function ResetPassword() {
                   </label>
                 </Form.Item>
                 <Form.Item
-                  style={{ marginTop: "1.2rem" }}
+                  style={{ marginTop: "48px" }}
                   wrapperCol={{ span: 14, offset: 7 }}
                 >
                   <Button
@@ -109,7 +109,11 @@ export default function ResetPassword() {
         >
           <div className="container">
             <img
-              style={{ display: "block", marginTop: 145 }}
+              style={{
+                display: "block",
+                marginTop: 100,
+                maxWidth: 900,
+              }}
               src={forgotPassword}
               alt="Alta Software"
               width="95%"
