@@ -11,7 +11,13 @@ export default function Login() {
   return (
     <div>
       <Row>
-        <Col xs={24} xl={10}>
+        <Col
+          xs={24}
+          xl={10}
+          style={{
+            padding: 20,
+          }}
+        >
           <div className="container" style={{ marginTop: 35 }}>
             <div className="img-container">
               <img
@@ -22,7 +28,7 @@ export default function Login() {
                 }}
                 src={logo}
                 alt="Alta Media"
-                width="165px"
+                width="170px"
               />
             </div>
             <div className="container" style={{ marginTop: 50 }}>

@@ -51,7 +51,7 @@ export default function ResetPassword() {
                   Đặt lại mật khẩu
                 </p>
                 <Form.Item name="Password" rules={[{ required: true }]}>
-                  <label htmlFor="password">
+                  <label htmlFor="password" style={{ fontSize: 18 }}>
                     Mật khẩu *
                     <Input.Password
                       size="large"
@@ -63,7 +63,7 @@ export default function ResetPassword() {
                   </label>
                 </Form.Item>
                 <Form.Item name="Password" rules={[{ required: true }]}>
-                  <label htmlFor="confirm">
+                  <label htmlFor="confirm" style={{ fontSize: 18 }}>
                     Nhập lại mật khẩu *
                     <Input.Password
                       size="large"
