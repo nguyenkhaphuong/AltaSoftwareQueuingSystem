@@ -22,7 +22,7 @@ export default function Login() {
                 }}
                 src={logo}
                 alt="Alta Media"
-                width="170px"
+                width="165px"
               />
             </div>
             <div className="container" style={{ marginTop: 50 }}>
