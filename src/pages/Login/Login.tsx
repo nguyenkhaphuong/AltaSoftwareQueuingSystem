@@ -98,7 +98,7 @@ export default function Login() {
         >
           <div className="container">
             <img
-              style={{ display: "inline", marginLeft: 50, marginTop: 50 }}
+              style={{ display: "inline", marginLeft: 79, marginTop: 50 }}
               src={login}
               alt="Alta Software"
               width="85%"
