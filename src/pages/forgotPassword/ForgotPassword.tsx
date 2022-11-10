@@ -121,6 +121,8 @@ export default function ForgotPassword() {
             <img
               style={{
                 display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
                 marginTop: 100,
                 maxWidth: 900,
               }}

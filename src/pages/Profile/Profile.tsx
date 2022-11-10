@@ -1,79 +1,69 @@
+import type { MenuProps } from "antd";
+import { Button, Menu, Layout } from "antd";
 import {
   AppstoreOutlined,
   BarChartOutlined,
-  CloudOutlined,
-  ShopOutlined,
-  TeamOutlined,
-  UploadOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
+  CommentOutlined,
+  DesktopOutlined,
+  ToolOutlined,
+  PieChartOutlined,
+  LogoutOutlined,
 } from "@ant-design/icons";
-import type { MenuProps } from "antd";
-import { Layout, Menu } from "antd";
-import "./Profile.css";
+import logo from "../../assets/logo.png";
 import React from "react";
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Sider, Content } = Layout;
+type MenuItem = Required<MenuProps>["items"][number];
 
-const items: MenuProps["items"] = [
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  BarChartOutlined,
-  CloudOutlined,
-  AppstoreOutlined,
-  TeamOutlined,
-  ShopOutlined,
-].map((icon, index) => ({
-  key: String(index + 1),
-  icon: React.createElement(icon),
-  label: `nav ${index + 1}`,
-}));
+function getItem(
+  label: React.ReactNode,
+  key: React.Key,
+  icon?: React.ReactNode,
+  children?: MenuItem[],
+  type?: "group"
+): MenuItem {
+  return {
+    key,
+    icon,
+    children,
+    label,
+    type,
+  } as MenuItem;
+}
+
+const items: MenuItem[] = [
+  getItem("Dashboard", "1", <AppstoreOutlined />),
+  getItem("Thiết bị", "2", <DesktopOutlined />),
+  getItem("Dịch vụ", "3", <CommentOutlined />),
+  getItem("Cấp số", "4", <PieChartOutlined />),
+  getItem("Báo cáo", "5", <BarChartOutlined />),
+  getItem("Cài đặt hệ thống", "6", <ToolOutlined />),
+  getItem("Đăng xuất", "7", <LogoutOutlined />),
+];
 
 const Profile: React.FC = () => (
-  <Layout hasSider>
-    <Sider
-      style={{
-        overflow: "auto",
-        height: "100vh",
-        position: "fixed",
-        left: 0,
-        top: 0,
-        bottom: 0,
-      }}
-    >
-      <div className="logo" />
-      <Menu
-        theme="dark"
-        mode="inline"
-        defaultSelectedKeys={["4"]}
-        items={items}
-      />
-    </Sider>
-    <Layout className="site-layout" style={{ marginLeft: 200 }}>
-      <Header className="site-layout-background" style={{ padding: 0 }} />
-      <Content style={{ margin: "24px 16px 0", overflow: "initial" }}>
-        <div
-          className="site-layout-background"
-          style={{ padding: 24, textAlign: "center" }}
-        >
-          <p>long content</p>
-          {
-            // indicates very long content
-            Array.from({ length: 100 }, (_, index) => (
-              <React.Fragment key={index}>
-                {index % 20 === 0 && index ? "more" : "..."}
-                <br />
-              </React.Fragment>
-            ))
-          }
+  <>
+    <Layout>
+      <Sider width={200} style={{ backgroundColor: "#fff" }}>
+        <div className="img-container">
+          <img
+            style={{
+              display: "block",
+              marginLeft: "auto",
+              marginRight: "auto",
+            }}
+            src={logo}
+            alt="Alta Media"
+            width="80px"
+          />
         </div>
-      </Content>
-      <Footer style={{ textAlign: "center" }}>
-        Ant Design ©2018 Created by Ant UED
-      </Footer>
+        <Menu defaultSelectedKeys={["1"]} mode="inline" items={items}></Menu>
+      </Sider>
+      <Layout>
+        <Content style={{ padding: "1em" }}>Content</Content>
+      </Layout>
     </Layout>
-  </Layout>
+  </>
 );
 
 export default Profile;

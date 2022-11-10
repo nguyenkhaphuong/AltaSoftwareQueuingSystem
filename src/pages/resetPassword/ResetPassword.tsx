@@ -111,6 +111,8 @@ export default function ResetPassword() {
             <img
               style={{
                 display: "block",
+                marginLeft: "auto",
+                marginRight: "auto",
                 marginTop: 100,
                 maxWidth: 900,
               }}
