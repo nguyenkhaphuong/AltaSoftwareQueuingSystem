@@ -1,8 +1,12 @@
 #components-layout-demo-fixed-sider .logo {
   height: 32px;
   margin: 16px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.3);
 }
 .site-layout .site-layout-background {
-  background: #fff;
+  background: #fff !important;
+}
+.form-input {
+  max-width: 384px;
+  max-height: 44px;
 }

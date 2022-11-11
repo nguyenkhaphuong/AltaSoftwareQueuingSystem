@@ -6,13 +6,28 @@ import { Button, Form, Input } from "antd";
 // import images assets
 import logo from "../../assets/logo.png";
 import login from "../../assets/group341.png";
+// import Firebase authentication
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function Login() {
+  // const auth = getAuth();
+  // createUserWithEmailAndPassword(auth, email, password)
+  //   .then((userCredential) => {
+  //     // Signed in
+  //     const user = userCredential.user;
+  //     // ...
+  //   })
+  //   .catch((error) => {
+  //     const errorCode = error.code;
+  //     const errorMessage = error.message;
+  //     // ..
+  //   });
   return (
     <div>
       <Row>
         <Col
           xs={24}
+          lg={12}
           xl={10}
           style={{
             padding: 20,
@@ -95,6 +110,7 @@ export default function Login() {
         </Col>
         <Col
           xs={24}
+          lg={12}
           xl={14}
           style={{
             backgroundColor: "#fff",
