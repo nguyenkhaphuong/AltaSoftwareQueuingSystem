@@ -77,7 +77,12 @@ const Profile: React.FC = () => (
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background">
-          <Avatar size={40} icon={<UserOutlined />}></Avatar> Nguyễn Văn A
+          <Avatar
+            style={{ marginRight: ".5rem" }}
+            size={40}
+            icon={<UserOutlined />}
+          ></Avatar>
+          Nguyễn Văn A
         </Header>
         <Content
           className="site-layout-background"
