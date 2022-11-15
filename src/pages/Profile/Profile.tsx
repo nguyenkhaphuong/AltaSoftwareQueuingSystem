@@ -17,10 +17,8 @@ const { Sider, Content, Header } = Layout;
 
 const Profile: React.FC = () => (
   <>
-    <Layout>
-      <Sider
-        style={{ backgroundColor: "#fff", width: "200px", height: "700px" }}
-      >
+    <Layout style={{ height: "100vh" }}>
+      <Sider style={{ backgroundColor: "#fff" }}>
         <div className="img-logo">
           <img
             style={{
@@ -79,39 +77,24 @@ const Profile: React.FC = () => (
       </Sider>
       <Layout className="site-layout">
         <Header className="site-layout-background">
-          <Row>
-            <Col span={18}>
-              <p
-                style={{ color: "#FF9138", fontSize: "20px", fontWeight: 700 }}
-              >
-                Thông tin cá nhân
-              </p>
-            </Col>
-            <Col span={6}>
-              <div>
-                <Avatar size={40} icon={<UserOutlined />}></Avatar> Nguyễn Văn A
-              </div>
-            </Col>
-          </Row>
+          <Avatar size={40} icon={<UserOutlined />}></Avatar> Nguyễn Văn A
         </Header>
         <Content
           className="site-layout-background"
           style={{
-            margin: "24px 16px",
-            padding: 20,
-            minHeight: 280,
+            padding: 24,
             borderRadius: "12px",
           }}
         >
           <Row>
-            <Col span={8}>
+            <Col xl={8} style={{ padding: 10 }}>
               <Avatar
                 style={{
                   marginLeft: "auto",
                   marginRight: "auto",
                   display: "block",
                 }}
-                size={248}
+                size={{ xs: 108, sm: 115, md: 128, lg: 180, xl: 200, xxl: 248 }}
                 icon={<UserOutlined />}
               ></Avatar>
               <br />
@@ -125,7 +108,7 @@ const Profile: React.FC = () => (
                 Nguyễn Văn A
               </h1>
             </Col>
-            <Col span={8}>
+            <Col xl={8} style={{ padding: 10 }}>
               <Form>
                 <Form.Item name="Name">
                   <label htmlFor="name" style={{ fontSize: 18 }}>
@@ -136,6 +119,7 @@ const Profile: React.FC = () => (
                       style={{
                         borderRadius: "6px",
                       }}
+                      disabled
                     />
                   </label>
                 </Form.Item>
@@ -146,6 +130,7 @@ const Profile: React.FC = () => (
                       className="form-input"
                       type="number"
                       style={{ borderRadius: "6px" }}
+                      disabled
                     />
                   </label>
                 </Form.Item>
@@ -156,42 +141,46 @@ const Profile: React.FC = () => (
                       className="form-input"
                       type="email"
                       style={{ borderRadius: "6px" }}
+                      disabled
                     />
                   </label>
                 </Form.Item>
               </Form>
             </Col>
-            <Col span={8}>
+            <Col xl={8} style={{ padding: 10 }}>
               <Form>
-                <Form.Item name="Name">
-                  <label htmlFor="name" style={{ fontSize: 18 }}>
-                    Tên Người Dùng
+                <Form.Item name="Username">
+                  <label htmlFor="username" style={{ fontSize: 18 }}>
+                    Tên Đăng Nhập
                     <Input
                       className="form-input"
                       type="text"
                       style={{
                         borderRadius: "6px",
                       }}
+                      disabled
                     />
                   </label>
                 </Form.Item>
-                <Form.Item name="Phone">
-                  <label htmlFor="phone" style={{ fontSize: 18 }}>
-                    Số điện thoại
-                    <Input
+                <Form.Item name="Password">
+                  <label htmlFor="password" style={{ fontSize: 18 }}>
+                    Mật khẩu
+                    <Input.Password
                       className="form-input"
-                      type="number"
+                      type="password"
                       style={{ borderRadius: "6px" }}
+                      disabled
                     />
                   </label>
                 </Form.Item>
-                <Form.Item name="Email">
-                  <label htmlFor="email" style={{ fontSize: 18 }}>
-                    Email
+                <Form.Item name="Role">
+                  <label htmlFor="role" style={{ fontSize: 18 }}>
+                    Vai trò
                     <Input
                       className="form-input"
-                      type="email"
+                      type="text"
                       style={{ borderRadius: "6px" }}
+                      disabled
                     />
                   </label>
                 </Form.Item>

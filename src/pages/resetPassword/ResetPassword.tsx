@@ -7,11 +7,20 @@ import logo from "../../assets/logo.png";
 import forgotPassword from "../../assets/forgotpassword.png";
 
 export default function ResetPassword() {
+  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+    e.preventDefault();
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    console.log(e.target.value);
+  };
   return (
     <div>
-      <Row>
+      <Row style={{ height: "100vh" }}>
         <Col
           xs={24}
+          md={12}
           xl={10}
           style={{
             padding: 20,
@@ -40,6 +49,7 @@ export default function ResetPassword() {
                   marginLeft: "auto",
                   marginRight: "auto",
                 }}
+                onFinish={handleSubmit}
               >
                 <p
                   style={{
@@ -59,6 +69,7 @@ export default function ResetPassword() {
                       style={{
                         borderRadius: "8px",
                       }}
+                      onChange={handleChange}
                     />
                   </label>
                 </Form.Item>
@@ -71,6 +82,7 @@ export default function ResetPassword() {
                       style={{
                         borderRadius: "8px",
                       }}
+                      onChange={handleChange}
                     />
                   </label>
                 </Form.Item>
@@ -100,6 +112,7 @@ export default function ResetPassword() {
         </Col>
         <Col
           xs={24}
+          md={12}
           xl={14}
           style={{
             backgroundColor: "#fff",

@@ -1,28 +1,28 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export interface AuthState {
-  name: string;
-  email: string;
-  username: string;
-  password: string;
-  phone?: number;
-  role: string;
+  name: string | null;
+  email: string | null;
+  username: string | null;
+  password: string | null;
+  phone?: number | null;
+  role: string | null;
 }
 
 const initialState: AuthState = {
-  name: "",
-  email: "",
-  username: "",
-  password: "",
-  phone: 0,
-  role: "",
+  name: null,
+  email: null,
+  username: null,
+  password: null,
+  phone: undefined,
+  role: null,
 };
 
 export const authSlice = createSlice({
   name: "user",
   initialState,
   reducers: {
-    addUser: (state, action) => {
+    setActiveUser: (state, action) => {
       state.name = action.payload.name;
       state.email = action.payload.email;
       state.username = action.payload.username;
@@ -30,17 +30,21 @@ export const authSlice = createSlice({
       state.phone = action.payload.phone;
       state.role = action.payload.role;
     },
-    logOut: (state) => {
-      state.name = "";
-      state.email = "";
-      state.username = "";
-      state.password = "";
-      state.phone = 0;
-      state.role = "";
+    setLogIn: (state, action) => {
+      state.username = action.payload.username;
+      state.password = action.payload.password;
+    },
+    setLogOut: (state) => {
+      state.name = null;
+      state.email = null;
+      state.username = null;
+      state.password = null;
+      state.phone = null;
+      state.role = null;
     },
   },
 });
 
-export const { addUser, logOut } = authSlice.actions;
+export const { setActiveUser, setLogIn, setLogOut } = authSlice.actions;
 
 export default authSlice.reducer;

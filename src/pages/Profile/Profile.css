@@ -7,6 +7,7 @@
   background: #fff !important;
 }
 .form-input {
-  max-width: 384px;
+  width: 28%;
+  max-width: 380px;
   max-height: 44px;
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./Login.css";
 // import Ant Design components
 import { Col, Row } from "antd";
@@ -7,27 +7,51 @@ import { Button, Form, Input } from "antd";
 import logo from "../../assets/logo.png";
 import login from "../../assets/group341.png";
 // import Firebase authentication
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { onAuthStateChanged } from "firebase/auth";
+import { auth } from "../../firebase";
+// import useDispatch and useSelector
+import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+
+//import slice
+import { setLogIn, setLogOut } from "../../redux/slice/authSlice";
+import { RootState } from "../../redux/store";
 
 export default function Login() {
-  // const auth = getAuth();
-  // createUserWithEmailAndPassword(auth, email, password)
-  //   .then((userCredential) => {
-  //     // Signed in
-  //     const user = userCredential.user;
-  //     // ...
-  //   })
-  //   .catch((error) => {
-  //     const errorCode = error.code;
-  //     const errorMessage = error.message;
-  //     // ..
-  //   });
+  const { username, password } = useAppSelector(
+    (state: RootState) => state.auth
+  );
+
+  const dispatch = useAppDispatch();
+
+  const handleLogIn = (e: React.FormEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    useEffect(() => {
+      onAuthStateChanged(auth, (user) => {
+        if (user) {
+          // user is logged in, send the user's details to redux, store the current user in the state
+          dispatch(
+            setLogIn({
+              // username: user.username,
+              // password: user.password,
+            })
+          );
+        } else {
+          dispatch(setLogOut());
+        }
+      });
+    }, []);
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    console.log(e.target.value);
+  };
   return (
     <div>
-      <Row>
+      <Row style={{ height: "100vh" }}>
         <Col
           xs={24}
-          lg={12}
+          md={12}
           xl={10}
           style={{
             padding: 20,
@@ -56,6 +80,7 @@ export default function Login() {
                   marginLeft: "auto",
                   marginRight: "auto",
                 }}
+                onFinish={handleLogIn}
               >
                 <Form.Item name="Username" rules={[{ required: true }]}>
                   <label htmlFor="username" style={{ fontSize: 18 }}>
@@ -66,6 +91,7 @@ export default function Login() {
                       style={{
                         borderRadius: "8px",
                       }}
+                      onChange={handleChange}
                     />
                   </label>
                 </Form.Item>
@@ -75,6 +101,7 @@ export default function Login() {
                     <Input.Password
                       size="large"
                       style={{ borderRadius: "8px" }}
+                      onChange={handleChange}
                     />
                   </label>
                 </Form.Item>
@@ -110,26 +137,23 @@ export default function Login() {
         </Col>
         <Col
           xs={24}
-          lg={12}
+          md={12}
           xl={14}
           style={{
             backgroundColor: "#fff",
             padding: 20,
-            display: "flex",
           }}
         >
           <div className="container">
             <img
               style={{
-                display: "block",
                 marginLeft: "auto",
                 marginRight: "auto",
-                marginTop: 45,
                 maxWidth: 900,
               }}
               src={login}
               alt="Alta Software"
-              width="85%"
+              width="95%"
             />
           </div>
         </Col>

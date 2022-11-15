@@ -9,11 +9,21 @@ import { useNavigate } from "react-router-dom";
 
 export default function ForgotPassword() {
   const navigate = useNavigate();
+
+  const handleSubmit = (e: React.FormEvent<HTMLInputElement>) => {
+    e.preventDefault();
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    console.log(e.target.value);
+  };
   return (
     <div>
-      <Row>
+      <Row style={{ height: "100vh" }}>
         <Col
           xs={24}
+          md={12}
           xl={10}
           style={{
             padding: 20,
@@ -41,6 +51,7 @@ export default function ForgotPassword() {
                   marginLeft: "auto",
                   marginRight: "auto",
                 }}
+                onFinish={handleSubmit}
               >
                 <p
                   style={{
@@ -60,49 +71,57 @@ export default function ForgotPassword() {
                       style={{
                         borderRadius: "8px",
                       }}
+                      onChange={handleChange}
                     />
                   </label>
                 </Form.Item>
-                <Form.Item
-                  style={{ marginTop: "48px" }}
-                  wrapperCol={{ span: 0, offset: 1 }}
-                >
-                  <Button
-                    type="default"
-                    style={{
-                      width: "162px",
-                      height: "40px",
-                      borderRadius: "8px",
-                      backgroundColor: "#F7F7F7",
-                      borderColor: "#FF9138",
-                      color: "#FF9138",
-                      justifySelf: "center",
-                      fontWeight: 700,
-                      marginLeft: 8,
-                      marginRight: 24,
-                    }}
-                    onClick={() => navigate("/")}
-                    htmlType="submit"
-                    className="login-form-button"
+                <Form.Item style={{ marginTop: "48px" }}>
+                  <Row
+                    style={{ marginLeft: "1.5em" }}
+                    justify="space-evenly"
+                    align="middle"
                   >
-                    Huỷ
-                  </Button>
-                  <Button
-                    style={{
-                      width: "162px",
-                      height: "40px",
-                      borderRadius: "8px",
-                      backgroundColor: "#FF9138",
-                      color: "#fff",
-                      justifySelf: "center",
-                      fontWeight: 700,
-                    }}
-                    // onClick={() => navigate("/resetpassword")}
-                    htmlType="submit"
-                    className="login-form-button"
-                  >
-                    Tiếp tục
-                  </Button>
+                    <Col span={12}>
+                      <Button
+                        type="default"
+                        style={{
+                          width: "90%",
+                          maxWidth: "162px",
+                          height: "40px",
+                          borderRadius: "8px",
+                          backgroundColor: "#F7F7F7",
+                          borderColor: "#FF9138",
+                          color: "#FF9138",
+                          justifySelf: "center",
+                          fontWeight: 700,
+                        }}
+                        onClick={() => navigate("/")}
+                        htmlType="submit"
+                        className="login-form-button"
+                      >
+                        Huỷ
+                      </Button>
+                    </Col>
+                    <Col span={12}>
+                      <Button
+                        style={{
+                          width: "90%",
+                          maxWidth: "162px",
+                          height: "40px",
+                          borderRadius: "8px",
+                          backgroundColor: "#FF9138",
+                          color: "#fff",
+                          justifySelf: "center",
+                          fontWeight: 700,
+                        }}
+                        // onClick={() => navigate("/resetpassword")}
+                        htmlType="submit"
+                        className="login-form-button"
+                      >
+                        Tiếp tục
+                      </Button>
+                    </Col>
+                  </Row>
                 </Form.Item>
               </Form>
             </div>
@@ -110,20 +129,18 @@ export default function ForgotPassword() {
         </Col>
         <Col
           xs={24}
+          md={12}
           xl={14}
           style={{
             backgroundColor: "#fff",
             padding: 20,
-            display: "flex",
           }}
         >
           <div className="container">
             <img
               style={{
-                display: "block",
                 marginLeft: "auto",
                 marginRight: "auto",
-                marginTop: 100,
                 maxWidth: 900,
               }}
               src={forgotPassword}
