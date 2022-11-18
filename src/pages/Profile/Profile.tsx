@@ -1,201 +1,75 @@
-import { Menu, Layout, Row, Col, Avatar, Form, Input } from "antd";
-import "./Profile.css";
-import {
-  AppstoreOutlined,
-  BarChartOutlined,
-  CommentOutlined,
-  DesktopOutlined,
-  ToolOutlined,
-  PieChartOutlined,
-  LogoutOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
+import { Menu, Layout, Avatar, Space } from "antd";
+import { UserOutlined } from "@ant-design/icons";
 import logo from "../../assets/logo.png";
+import "./Profile.css";
 import React from "react";
+import Dashboard from "./Dashboard/Dashboard";
+import { Routes, useNavigate, Route } from "react-router-dom";
+import Devices from "./Devices/Devices";
+import Services from "./Services/Services";
+import Analytics from "./Analytics/Analytics";
+import Reports from "./Reports/Reports";
+import Settings from "./Settings/Settings";
+import Sidebar from "../../components/Sidebar";
 
 const { Sider, Content, Header } = Layout;
 
-const Profile: React.FC = () => (
-  <>
-    <Layout style={{ height: "100vh" }}>
-      <Sider style={{ backgroundColor: "#fff" }}>
-        <div className="img-logo">
-          <img
+function Contents() {
+  return (
+    <>
+      <Routes>
+        <Route path="dashboard" element={<Dashboard />} />
+        <Route path="thiet-bi" element={<Devices />} />
+        <Route path="dich-vu" element={<Services />} />
+        <Route path="cap-so" element={<Analytics />} />
+        <Route path="bao-cao" element={<Reports />} />
+        <Route path="cai-dat" element={<Settings />} />
+      </Routes>
+    </>
+  );
+}
+
+function Profile() {
+  const navigate = useNavigate();
+  return (
+    <div style={{ display: "flex", flexDirection: "row" }}>
+      <Layout style={{ height: "100vh" }}>
+        <Sider style={{ backgroundColor: "#fff" }}>
+          <div className="img-logo">
+            <img
+              style={{
+                display: "block",
+                padding: 20,
+                marginLeft: "auto",
+                marginRight: "auto",
+              }}
+              src={logo}
+              alt="Alta Media"
+              width="125px"
+            />
+          </div>
+          <Sidebar />
+        </Sider>
+        <Layout className="site-layout">
+          <Header className="site-layout-background">
+            <Space>
+              <Avatar size={40} icon={<UserOutlined />}></Avatar>
+              Nguyễn Văn A
+            </Space>
+          </Header>
+          <Content
+            className="site-layout-background"
             style={{
-              display: "block",
-              padding: 20,
-              marginLeft: "auto",
-              marginRight: "auto",
+              padding: 24,
+              borderRadius: "12px",
             }}
-            src={logo}
-            alt="Alta Media"
-            width="125px"
-          />
-        </div>
-        <Menu
-          defaultSelectedKeys={["1"]}
-          mode="inline"
-          items={[
-            {
-              key: "1",
-              icon: <AppstoreOutlined />,
-              label: "Dashboard",
-            },
-            {
-              key: "2",
-              icon: <DesktopOutlined />,
-              label: "Thiết bị",
-            },
-            {
-              key: "3",
-              icon: <CommentOutlined />,
-              label: "Dịch vụ",
-            },
-            {
-              key: "4",
-              icon: <PieChartOutlined />,
-              label: "Cấp số",
-            },
-            {
-              key: "5",
-              icon: <BarChartOutlined />,
-              label: "Báo cáo",
-            },
-            {
-              key: "6",
-              icon: <ToolOutlined />,
-              label: "Cài đặt hệ thống",
-            },
-            {
-              key: "7",
-              icon: <LogoutOutlined />,
-              label: "Đăng xuất",
-              danger: true,
-            },
-          ]}
-        ></Menu>
-      </Sider>
-      <Layout className="site-layout">
-        <Header className="site-layout-background">
-          <Avatar
-            style={{ marginRight: ".5rem" }}
-            size={40}
-            icon={<UserOutlined />}
-          ></Avatar>
-          Nguyễn Văn A
-        </Header>
-        <Content
-          className="site-layout-background"
-          style={{
-            padding: 24,
-            borderRadius: "12px",
-          }}
-        >
-          <Row>
-            <Col xl={8} style={{ padding: 10 }}>
-              <Avatar
-                style={{
-                  marginLeft: "auto",
-                  marginRight: "auto",
-                  display: "block",
-                }}
-                size={{ xs: 108, sm: 115, md: 128, lg: 180, xl: 200, xxl: 248 }}
-                icon={<UserOutlined />}
-              ></Avatar>
-              <br />
-              <h1
-                style={{
-                  fontSize: "24px",
-                  fontWeight: 700,
-                  textAlign: "center",
-                }}
-              >
-                Nguyễn Văn A
-              </h1>
-            </Col>
-            <Col xl={8} style={{ padding: 10 }}>
-              <Form>
-                <Form.Item name="Name">
-                  <label htmlFor="name" style={{ fontSize: 18 }}>
-                    Tên Người Dùng
-                    <Input
-                      className="form-input"
-                      type="text"
-                      style={{
-                        borderRadius: "6px",
-                      }}
-                      disabled
-                    />
-                  </label>
-                </Form.Item>
-                <Form.Item name="Phone">
-                  <label htmlFor="phone" style={{ fontSize: 18 }}>
-                    Số điện thoại
-                    <Input
-                      className="form-input"
-                      type="number"
-                      style={{ borderRadius: "6px" }}
-                      disabled
-                    />
-                  </label>
-                </Form.Item>
-                <Form.Item name="Email">
-                  <label htmlFor="email" style={{ fontSize: 18 }}>
-                    Email
-                    <Input
-                      className="form-input"
-                      type="email"
-                      style={{ borderRadius: "6px" }}
-                      disabled
-                    />
-                  </label>
-                </Form.Item>
-              </Form>
-            </Col>
-            <Col xl={8} style={{ padding: 10 }}>
-              <Form>
-                <Form.Item name="Username">
-                  <label htmlFor="username" style={{ fontSize: 18 }}>
-                    Tên Đăng Nhập
-                    <Input
-                      className="form-input"
-                      type="text"
-                      style={{
-                        borderRadius: "6px",
-                      }}
-                      disabled
-                    />
-                  </label>
-                </Form.Item>
-                <Form.Item name="Password">
-                  <label htmlFor="password" style={{ fontSize: 18 }}>
-                    Mật khẩu
-                    <Input.Password
-                      className="form-input"
-                      type="password"
-                      style={{ borderRadius: "6px" }}
-                      disabled
-                    />
-                  </label>
-                </Form.Item>
-                <Form.Item name="Role">
-                  <label htmlFor="role" style={{ fontSize: 18 }}>
-                    Vai trò
-                    <Input
-                      className="form-input"
-                      type="text"
-                      style={{ borderRadius: "6px" }}
-                      disabled
-                    />
-                  </label>
-                </Form.Item>
-              </Form>
-            </Col>
-          </Row>
-        </Content>
+          >
+            <Contents />
+          </Content>
+        </Layout>
       </Layout>
-    </Layout>
-  </>
-);
+    </div>
+  );
+}
 
 export default Profile;

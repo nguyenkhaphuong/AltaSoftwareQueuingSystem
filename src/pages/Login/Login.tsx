@@ -149,11 +149,11 @@ export default function Login() {
               style={{
                 marginLeft: "auto",
                 marginRight: "auto",
-                maxWidth: 900,
+                maxWidth: 800,
               }}
               src={login}
               alt="Alta Software"
-              width="95%"
+              width="90%"
             />
           </div>
         </Col>
