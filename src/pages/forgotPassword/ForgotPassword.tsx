@@ -67,7 +67,7 @@ export default function ForgotPassword() {
                     Vui lòng nhập email để đặt lại mật khẩu của bạn *
                     <Input
                       size="large"
-                      type="text"
+                      type="email"
                       style={{
                         borderRadius: "8px",
                       }}

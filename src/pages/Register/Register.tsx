@@ -1,54 +1,19 @@
-import React, { useEffect } from "react";
-import "./Login.css";
 // import Ant Design components
 import { Col, Row } from "antd";
 import { Button, Form, Input } from "antd";
 // import images assets
 import logo from "../../assets/logo.png";
 import login from "../../assets/group341.png";
-// import Firebase authentication
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../firebase";
-// import useDispatch and useSelector
-import { useAppDispatch, useAppSelector } from "../../redux/hooks";
+import React from "react";
 
-//import slice
-import { setLogIn, setLogOut } from "../../redux/slice/authSlice";
-import { RootState } from "../../redux/store";
-
-export default function Login() {
-  const { username, password } = useAppSelector(
-    (state: RootState) => state.auth
-  );
-
-  const dispatch = useAppDispatch();
-
-  const handleLogIn = (e: React.FormEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    useEffect(() => {
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // user is logged in, send the user's details to redux, store the current user in the state
-          dispatch(
-            setLogIn({
-              // username: user.username,
-              // password: user.password,
-            })
-          );
-        } else {
-          dispatch(setLogOut());
-        }
-      });
-    }, []);
-  };
-
+export default function Register() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     e.preventDefault();
     console.log(e.target.value);
   };
   return (
     <div>
-      <Row style={{ height: "100vh" }}>
+      <Row style={{ height: "120vh" }}>
         <Col
           xs={24}
           md={12}
@@ -57,7 +22,7 @@ export default function Login() {
             padding: 20,
           }}
         >
-          <div className="container" style={{ marginTop: 82 }}>
+          <div className="container" style={{ marginTop: 0 }}>
             <div className="img-container">
               <img
                 style={{
@@ -70,7 +35,7 @@ export default function Login() {
                 width="170px"
               />
             </div>
-            <div className="container" style={{ marginTop: 75 }}>
+            <div className="container" style={{ marginTop: 25 }}>
               <Form
                 name="normal_login"
                 className="login-form"
@@ -80,11 +45,24 @@ export default function Login() {
                   marginLeft: "auto",
                   marginRight: "auto",
                 }}
-                onFinish={handleLogIn}
+                // onFinish={handleRegister}
               >
+                <Form.Item name="Name" rules={[{ required: true }]}>
+                  <label htmlFor="name" style={{ fontSize: 18 }}>
+                    Tên người dùng *
+                    <Input
+                      size="large"
+                      type="text"
+                      style={{
+                        borderRadius: "8px",
+                      }}
+                      onChange={handleChange}
+                    />
+                  </label>
+                </Form.Item>
                 <Form.Item name="Username" rules={[{ required: true }]}>
                   <label htmlFor="username" style={{ fontSize: 18 }}>
-                    Tên Đăng Nhập *
+                    Tên đăng nhập *
                     <Input
                       size="large"
                       type="text"
@@ -105,22 +83,56 @@ export default function Login() {
                     />
                   </label>
                 </Form.Item>
+                <Form.Item name="Role" rules={[{ required: true }]}>
+                  <label htmlFor="role" style={{ fontSize: 18 }}>
+                    Vai trò *
+                    <Input
+                      size="large"
+                      type="text"
+                      style={{
+                        borderRadius: "8px",
+                      }}
+                      onChange={handleChange}
+                    />
+                  </label>
+                </Form.Item>
+                <Form.Item name="Email" rules={[{ required: true }]}>
+                  <label htmlFor="email" style={{ fontSize: 18 }}>
+                    Email *
+                    <Input
+                      size="large"
+                      type="email"
+                      style={{
+                        borderRadius: "8px",
+                      }}
+                      onChange={handleChange}
+                    />
+                  </label>
+                </Form.Item>
+                <Form.Item name="Phone">
+                  <label htmlFor="phone" style={{ fontSize: 18 }}>
+                    Số điện thoại
+                    <Input
+                      size="large"
+                      type="tel"
+                      style={{
+                        borderRadius: "8px",
+                      }}
+                      onChange={handleChange}
+                    />
+                  </label>
+                </Form.Item>
+                Đã có tài khoản?
                 <a
-                  href="/forgotpassword"
-                  style={{ fontSize: 14, color: "#E73F3F" }}
-                >
-                  Quên mật khẩu?
-                </a>
-                <br />
-                <a
-                  href="/register"
+                  href="/"
                   style={{
-                    textDecoration: "underline",
                     fontSize: 16,
                     color: "#E73F3F",
+                    marginLeft: "0.3em",
+                    textDecoration: "underline",
                   }}
                 >
-                  Đăng ký tài khoản
+                  Đăng Nhập
                 </a>
                 <Form.Item
                   style={{ marginTop: "1.2rem" }}
@@ -139,7 +151,7 @@ export default function Login() {
                     htmlType="submit"
                     className="login-form-button"
                   >
-                    Đăng Nhập
+                    Đăng Ký
                   </Button>
                 </Form.Item>
               </Form>

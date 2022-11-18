@@ -64,6 +64,7 @@ export default function ResetPassword() {
                   <label htmlFor="password" style={{ fontSize: 18 }}>
                     Mật khẩu *
                     <Input.Password
+                      id="password"
                       size="large"
                       type="password"
                       style={{
@@ -77,6 +78,7 @@ export default function ResetPassword() {
                   <label htmlFor="confirm" style={{ fontSize: 18 }}>
                     Nhập lại mật khẩu *
                     <Input.Password
+                      id="confirmPassword"
                       size="large"
                       type="password"
                       style={{

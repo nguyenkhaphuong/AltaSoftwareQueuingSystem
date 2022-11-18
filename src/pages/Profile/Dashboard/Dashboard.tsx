@@ -1,12 +1,12 @@
-import { Row, Col, Avatar, Form, Input } from "antd";
+import { Row, Col, Avatar, Form, Input, Upload, Button } from "antd";
 import "./Dashboard.css";
-import { UserOutlined } from "@ant-design/icons";
+import { UserOutlined, UploadOutlined } from "@ant-design/icons";
 import React from "react";
 
 const Dashboard: React.FC = () => (
   <>
     <Row>
-      <Col xl={8} style={{ padding: 10 }}>
+      <Col xl={8} style={{ padding: 10, textAlign: "center" }}>
         <Avatar
           style={{
             marginLeft: "auto",
@@ -17,11 +17,14 @@ const Dashboard: React.FC = () => (
           icon={<UserOutlined />}
         ></Avatar>
         <br />
+        <Upload>
+          <Button icon={<UploadOutlined />}>Click to Upload</Button>
+        </Upload>
         <h1
           style={{
             fontSize: "24px",
             fontWeight: 700,
-            textAlign: "center",
+            marginTop: "0.4em",
           }}
         >
           Nguyễn Văn A
@@ -47,7 +50,7 @@ const Dashboard: React.FC = () => (
               Số điện thoại
               <Input
                 className="form-input"
-                type="number"
+                type="tel"
                 style={{ borderRadius: "6px" }}
                 disabled
               />

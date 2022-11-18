@@ -9,15 +9,17 @@ import Profile from "./pages/Profile/Profile";
 import Reports from "./pages/Profile/Reports/Reports";
 import Services from "./pages/Profile/Services/Services";
 import Settings from "./pages/Profile/Settings/Settings";
+import Register from "./pages/Register/Register";
 import ResetPassword from "./pages/resetPassword/ResetPassword";
 
 function App() {
   return (
     <div style={{ backgroundColor: "#F7F7F7" }}>
       <Routes>
-        <Route path="/" element={<Login />}></Route>
-        <Route path="/forgotpassword" element={<ForgotPassword />}></Route>
-        <Route path="/resetpassword" element={<ResetPassword />}></Route>
+        <Route index element={<Login />}></Route>
+        <Route path="/register" element={<Register />} />
+        <Route path="/forgotpassword" element={<ForgotPassword />} />
+        <Route path="/resetpassword" element={<ResetPassword />} />
         <Route path="/profile" element={<Profile />}>
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="thiet-bi" element={<Devices />} />
@@ -26,6 +28,21 @@ function App() {
           <Route path="bao-cao" element={<Reports />} />
           <Route path="cai-dat" element={<Settings />} />
         </Route>
+        <Route
+          path="*"
+          element={
+            <p
+              style={{
+                textAlign: "center",
+                fontSize: "2em",
+                color: "red",
+                fontWeight: 600,
+              }}
+            >
+              Error 404. Not found!
+            </p>
+          }
+        />
       </Routes>
     </div>
   );
