@@ -5,7 +5,8 @@ import Login from "./pages/Login/Login";
 import Analytics from "./pages/Profile/Analytics/Analytics";
 import Dashboard from "./pages/Profile/Dashboard/Dashboard";
 import Devices from "./pages/Profile/Devices/Devices";
-import Profile from "./pages/Profile/Profile";
+import Home from "./pages/Profile/Home";
+import Profile from "./pages/Profile/Profile/Profile";
 import Reports from "./pages/Profile/Reports/Reports";
 import Services from "./pages/Profile/Services/Services";
 import Settings from "./pages/Profile/Settings/Settings";
@@ -20,7 +21,8 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/forgotpassword" element={<ForgotPassword />} />
         <Route path="/resetpassword" element={<ResetPassword />} />
-        <Route path="/profile" element={<Profile />}>
+        <Route path="/home" element={<Home />}>
+          <Route path="profile" element={<Profile />} />
           <Route path="dashboard" element={<Dashboard />} />
           <Route path="thiet-bi" element={<Devices />} />
           <Route path="dich-vu" element={<Services />} />

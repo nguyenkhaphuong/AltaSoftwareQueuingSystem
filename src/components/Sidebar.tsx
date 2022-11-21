@@ -8,15 +8,8 @@ import {
   ToolOutlined,
   PieChartOutlined,
   LogoutOutlined,
-  UserOutlined,
 } from "@ant-design/icons";
-import { Routes, useNavigate, Route } from "react-router-dom";
-
-import Devices from "../pages/Profile/Devices/Devices";
-import Services from "../pages/Profile/Dashboard/Dashboard";
-import Analytics from "../pages/Profile/Dashboard/Dashboard";
-import Reports from "../pages/Profile/Dashboard/Dashboard";
-import Settings from "../pages/Profile/Dashboard/Dashboard";
+import { useNavigate } from "react-router-dom";
 
 export default function Sidebar() {
   const navigate = useNavigate();
@@ -34,32 +27,32 @@ export default function Sidebar() {
         mode="inline"
         items={[
           {
-            key: "/profile/dashboard",
+            key: "/home/dashboard",
             icon: <AppstoreOutlined />,
             label: "Dashboard",
           },
           {
-            key: "/profile/thiet-bi",
+            key: "/home/thiet-bi",
             icon: <DesktopOutlined />,
             label: "Thiết bị",
           },
           {
-            key: "/profile/dich-vu",
+            key: "/home/dich-vu",
             icon: <CommentOutlined />,
             label: "Dịch vụ",
           },
           {
-            key: "/profile/cap-so",
+            key: "/home/cap-so",
             icon: <PieChartOutlined />,
             label: "Cấp số",
           },
           {
-            key: "/profile/bao-cao",
+            key: "/home/bao-cao",
             icon: <BarChartOutlined />,
             label: "Báo cáo",
           },
           {
-            key: "/profile/cai-dat",
+            key: "/home/cai-dat",
             icon: <ToolOutlined />,
             label: "Cài đặt hệ thống",
           },
