@@ -1,0 +1,10 @@
+.container {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 2px 4px 8px 0 rgba(70, 64, 67, 0.1);
+}
+
+.form-input {
+  width: 100%;
+  max-width: 375px;
+}

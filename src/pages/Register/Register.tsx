@@ -22,7 +22,7 @@ export default function Register() {
             padding: 20,
           }}
         >
-          <div className="container" style={{ marginTop: 0 }}>
+          <div style={{ marginTop: 0 }}>
             <div className="img-container">
               <img
                 style={{
@@ -35,7 +35,7 @@ export default function Register() {
                 width="170px"
               />
             </div>
-            <div className="container" style={{ marginTop: 25 }}>
+            <div style={{ marginTop: 25 }}>
               <Form
                 name="normal_login"
                 className="login-form"
@@ -167,7 +167,7 @@ export default function Register() {
             padding: 20,
           }}
         >
-          <div className="container">
+          <div>
             <img
               style={{
                 marginLeft: "auto",

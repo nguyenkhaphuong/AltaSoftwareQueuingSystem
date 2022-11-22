@@ -26,7 +26,7 @@ export default function ResetPassword() {
             padding: 20,
           }}
         >
-          <div className="container" style={{ marginTop: 82 }}>
+          <div style={{ marginTop: 82 }}>
             <div className="img-container">
               <img
                 style={{
@@ -39,7 +39,7 @@ export default function ResetPassword() {
                 width="170px"
               />
             </div>
-            <div className="container" style={{ marginTop: 75 }}>
+            <div style={{ marginTop: 75 }}>
               <Form
                 name="normal_login"
                 className="login-form"
@@ -122,7 +122,7 @@ export default function ResetPassword() {
             display: "flex",
           }}
         >
-          <div className="container">
+          <div>
             <img
               style={{
                 display: "block",
