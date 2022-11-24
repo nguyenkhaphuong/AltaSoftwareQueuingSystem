@@ -12,6 +12,7 @@ import Reports from "./Reports/Reports";
 import Settings from "./Settings/Settings";
 import Sidebar from "../../components/Sidebar";
 import Profile from "./Profile/Profile";
+import DeviceList from "./Devices/DeviceList/DeviceList";
 
 const { Sider, Content, Header } = Layout;
 
@@ -21,7 +22,7 @@ function Contents() {
       <Routes>
         <Route path="/profile" element={<Profile />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="thiet-bi" element={<Devices />} />
+        <Route path="/thiet-bi" element={<Devices />} />
         <Route path="dich-vu" element={<Services />} />
         <Route path="cap-so" element={<Analytics />} />
         <Route path="bao-cao" element={<Reports />} />

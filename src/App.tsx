@@ -12,6 +12,7 @@ import Services from "./pages/Profile/Services/Services";
 import Settings from "./pages/Profile/Settings/Settings";
 import Register from "./pages/Register/Register";
 import ResetPassword from "./pages/resetPassword/ResetPassword";
+import DeviceList from "./pages/Profile/Devices/DeviceList/DeviceList";
 
 function App() {
   return (

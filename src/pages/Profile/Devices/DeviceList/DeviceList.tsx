@@ -1,7 +1,7 @@
 import React from "react";
 import { Table } from "antd";
+import "./DeviceList.css";
 import type { ColumnsType } from "antd/es/table";
-import ServicesList from "./ServicesList/ServicesList";
 
 interface DataType {
   key: string;
@@ -68,13 +68,10 @@ const data: DataType[] = [
   },
 ];
 
-export default function Services() {
+export default function DeviceList() {
   return (
     <div>
-      <h1 style={{ fontSize: "20px", fontWeight: 700, color: "#FF9138" }}>
-        Quản lý dịch vụ
-      </h1>
-      <ServicesList />
+      <Table columns={columns} dataSource={data} />
     </div>
   );
 }
