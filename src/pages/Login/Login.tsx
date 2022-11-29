@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Login.css";
 // import Ant Design components
 import { Col, Row } from "antd";
@@ -6,9 +6,6 @@ import { Button, Form, Input } from "antd";
 // import images assets
 import logo from "../../assets/logo.png";
 import login from "../../assets/group341.png";
-// import Firebase authentication
-import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../firebase";
 // import useDispatch and useSelector
 import { useAppDispatch, useAppSelector } from "../../redux/hooks";
 
@@ -17,35 +14,34 @@ import { setLogIn, setLogOut } from "../../redux/slice/authSlice";
 import { RootState } from "../../redux/store";
 
 export default function Login() {
+  const [user, setUser] = useState("");
+  const [pass, setPass] = useState("");
+
   const { username, password } = useAppSelector(
     (state: RootState) => state.auth
   );
 
   const dispatch = useAppDispatch();
 
-  const handleLogIn = (e: React.FormEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    useEffect(() => {
-      onAuthStateChanged(auth, (user) => {
-        if (user) {
-          // user is logged in, send the user's details to redux, store the current user in the state
-          dispatch(
-            setLogIn({
-              // username: user.username,
-              // password: user.password,
-            })
-          );
-        } else {
-          dispatch(setLogOut());
-        }
-      });
-    }, []);
-  };
+  // const handleLogIn = (e: React.FormEvent<HTMLInputElement>) => {
+  //   e.preventDefault();
+  //   useEffect(() => {
+  //     onAuthStateChanged(auth, (user) => {
+  //       if (user) {
+  //         // user is logged in, send the user's details to redux, store the current user in the state
+  //         dispatch(
+  //           setLogIn({
+  //             // username: user.username,
+  //             // password: user.password,
+  //           })
+  //         );
+  //       } else {
+  //         dispatch(setLogOut());
+  //       }
+  //     });
+  //   }, []);
+  // };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    console.log(e.target.value);
-  };
   return (
     <div>
       <Row style={{ height: "100vh" }}>
@@ -80,7 +76,7 @@ export default function Login() {
                   marginLeft: "auto",
                   marginRight: "auto",
                 }}
-                onFinish={handleLogIn}
+                // onFinish={handleLogIn}
               >
                 <Form.Item name="Username" rules={[{ required: true }]}>
                   <label htmlFor="username" style={{ fontSize: 18 }}>
@@ -91,7 +87,7 @@ export default function Login() {
                       style={{
                         borderRadius: "8px",
                       }}
-                      onChange={handleChange}
+                      onChange={(e) => setUser(e.target.value)}
                     />
                   </label>
                 </Form.Item>
@@ -101,7 +97,7 @@ export default function Login() {
                     <Input.Password
                       size="large"
                       style={{ borderRadius: "8px" }}
-                      onChange={handleChange}
+                      onChange={(e) => setPass(e.target.value)}
                     />
                   </label>
                 </Form.Item>
