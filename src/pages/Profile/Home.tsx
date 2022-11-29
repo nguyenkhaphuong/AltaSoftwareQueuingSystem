@@ -4,7 +4,7 @@ import logo from "../../assets/logo.png";
 import "./Home.css";
 import React from "react";
 import Dashboard from "./Dashboard/Dashboard";
-import { Routes, useNavigate, Route, Outlet, Link } from "react-router-dom";
+import { Routes, Route, Outlet, Link } from "react-router-dom";
 import Devices from "./Devices/Devices";
 import Services from "./Services/Services";
 import Analytics from "./Analytics/Analytics";
@@ -12,7 +12,6 @@ import Reports from "./Reports/Reports";
 import Settings from "./Settings/Settings";
 import Sidebar from "../../components/Sidebar";
 import Profile from "./Profile/Profile";
-import DeviceList from "./Devices/DeviceList/DeviceList";
 
 const { Sider, Content, Header } = Layout;
 
