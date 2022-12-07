@@ -1,8 +1,7 @@
-import { Menu, Layout, Avatar, Space } from "antd";
-import { UserOutlined } from "@ant-design/icons";
+import { Layout, Avatar, Space } from "antd";
 import logo from "../../assets/logo.png";
 import "./Home.css";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Dashboard from "./Dashboard/Dashboard";
 import { Routes, Route, Outlet, Link } from "react-router-dom";
 import Devices from "./Devices/Devices";
@@ -12,6 +11,9 @@ import Reports from "./Reports/Reports";
 import Settings from "./Settings/Settings";
 import Sidebar from "../../components/Sidebar";
 import Profile from "./Profile/Profile";
+import { onSnapshot, QuerySnapshot, DocumentData } from "firebase/firestore";
+import { userCollection } from "../../firebase";
+import { AuthState } from "../../redux/slice/authSlice";
 
 const { Sider, Content, Header } = Layout;
 
@@ -32,6 +34,21 @@ function Contents() {
 }
 
 function Home() {
+  const [users, setUsers] = useState<AuthState[]>([]);
+
+  useEffect(() =>
+    onSnapshot(userCollection, (snapshot: QuerySnapshot<DocumentData>) => {
+      setUsers(
+        snapshot.docs.map((doc) => {
+          return {
+            id: doc.id,
+            ...doc.data(),
+          };
+        })
+      );
+    })
+  );
+
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
       <Layout style={{ height: "100vh" }}>
@@ -60,10 +77,14 @@ function Home() {
             }}
           >
             <Space>
-              <Avatar size={40} icon={<UserOutlined />}></Avatar>
-              <Link to="profile" style={{ color: "black" }}>
-                Nguyễn Văn A
-              </Link>
+              {users?.map((user) => (
+                <>
+                  <Avatar size={40} src={user.image}></Avatar>
+                  <Link to="profile" style={{ color: "black" }}>
+                    {user.name}
+                  </Link>
+                </>
+              ))}
             </Space>
           </Header>
           <Content
