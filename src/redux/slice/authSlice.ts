@@ -2,21 +2,23 @@ import { createSlice } from "@reduxjs/toolkit";
 
 export interface AuthState {
   id?: string;
-  name: string | null;
-  email: string | null;
-  username: string | null;
-  password: string | null;
-  phone?: number | null;
-  role: string | null;
+  name: string;
+  email: string;
+  image: string;
+  username: string;
+  password: string;
+  phone: string | undefined;
+  role: string;
 }
 
 const initialState: AuthState = {
-  name: null,
-  email: null,
-  username: null,
-  password: null,
-  phone: undefined,
-  role: null,
+  name: "",
+  email: "",
+  image: "",
+  username: "",
+  password: "",
+  phone: "+84",
+  role: "",
 };
 
 export const authSlice = createSlice({
@@ -36,12 +38,12 @@ export const authSlice = createSlice({
       state.password = action.payload.password;
     },
     setLogOut: (state) => {
-      state.name = null;
-      state.email = null;
-      state.username = null;
-      state.password = null;
-      state.phone = null;
-      state.role = null;
+      state.name = "";
+      state.email = "";
+      state.username = "";
+      state.password = "";
+      state.phone = "+84";
+      state.role = "";
     },
   },
 });

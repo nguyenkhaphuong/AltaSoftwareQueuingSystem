@@ -111,7 +111,7 @@ export default function Register() {
                 </Form.Item>
                 <Form.Item name="Phone">
                   <label htmlFor="phone" style={{ fontSize: 18 }}>
-                    Số điện thoại
+                    Số điện thoại *
                     <Input
                       size="large"
                       type="tel"
